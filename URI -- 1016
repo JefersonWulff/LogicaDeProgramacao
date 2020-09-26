@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+
+int DISTANCIA, TEMPO;
+
+    scanf("%d", &DISTANCIA);
+
+    TEMPO = (60 * DISTANCIA) / 30;    //regra de três 
+
+    printf("%d minutos\n",TEMPO);
+
+return 0;
+}
