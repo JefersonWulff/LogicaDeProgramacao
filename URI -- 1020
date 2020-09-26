@@ -1,0 +1,25 @@
+#include <stdio.h>
+ 
+int main() {
+ 
+    int IDADE, dias, meses, anos, I;
+    
+    scanf("%d", &IDADE);
+    
+    I = IDADE;
+    
+    anos = I/365;
+    I = I%365;
+    
+    meses = I/30;
+    I = I%30;
+    
+    dias = I/1;
+    I = I%1;
+ 
+    printf("%d ano(s)\n", anos);
+    printf("%d mes(es)\n", meses);
+    printf("%d dia(s)\n", dias);
+    
+    return 0;
+}
