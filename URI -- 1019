@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+ int TEMPO;
+
+ scanf("%d", &TEMPO);
+
+ int hrs = TEMPO / 3600;
+ TEMPO = TEMPO - (hrs * 3600);
+
+ int min = TEMPO / 60;
+ TEMPO = TEMPO - (min * 60);
+
+ printf("%d:%d:%d\n", hrs, min, TEMPO);
+
+ return 0;
+}
