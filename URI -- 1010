@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+    int codigoA, codigoB, numeroA, numeroB;
+    double precoA, precoB, VALOR;
+    
+    scanf("%d %d %lf\n", &codigoA, &numeroA, &precoA);
+    scanf("%d %d %lf\n", &codigoB, &numeroB, &precoB);
+    
+    VALOR = (numeroA * precoA) + (numeroB * precoB);
+    
+    printf("VALOR A PAGAR: R$ %.2lf\n", VALOR);
+    
+    return 0;
+}
