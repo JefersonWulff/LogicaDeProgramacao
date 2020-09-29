@@ -1,0 +1,26 @@
+ #include<stdio.h>
+#include <stdlib.h>
+
+int main(){
+  
+    int VEZES, NUM, IN, OUT, i;
+  
+    scanf("%d", &VEZES);
+    IN = 0;
+    OUT = 0;
+  
+    for(i=0;i<VEZES;i++){
+        scanf("%d",&NUM);
+        if((NUM>=10) && (NUM<=20)){
+            IN++;
+        }else{
+            OUT++;
+        }
+    }
+  
+    printf("%d in\n", IN);
+    printf("%d out\n",OUT);
+    
+    return 0;
+    
+}
