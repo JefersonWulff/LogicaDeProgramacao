@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+  int A,B;
+    for(A=1; A<=9; A+=2){
+        for(B=7; B>=5; B--)
+        
+            printf("I=%d J=%d\n",A, B);
+    }
+    return 0;
+}
