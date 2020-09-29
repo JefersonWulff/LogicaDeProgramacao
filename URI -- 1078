@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main(){
+    int NUM;
+    
+    
+    scanf("%d", &NUM);
+    
+    printf("1 x %d = %d\n", NUM, 1*NUM);
+    printf("2 x %d = %d\n", NUM, 2*NUM);
+    printf("3 x %d = %d\n", NUM, 3*NUM);
+    printf("4 x %d = %d\n", NUM, 4*NUM);
+    printf("5 x %d = %d\n", NUM, 5*NUM);
+    printf("6 x %d = %d\n", NUM, 6*NUM);
+    printf("7 x %d = %d\n", NUM, 7*NUM);
+    printf("8 x %d = %d\n", NUM, 8*NUM);
+    printf("9 x %d = %d\n", NUM, 9*NUM);
+    printf("10 x %d = %d\n", NUM, 10*NUM);
+    
+    return 0; 
+}
