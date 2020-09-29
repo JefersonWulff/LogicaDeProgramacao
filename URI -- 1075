@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+   int CONT, NUM;
+
+   scanf("%d", &NUM);
+
+   for(CONT=1; CONT<=10000; CONT++){
+        if(CONT%NUM==2){
+           printf("%d\n", CONT);
+        }   
+    } 
+    
+   return 0;
+}
