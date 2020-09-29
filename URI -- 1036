@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+    double A,B,C,D,FORMULA;
+    scanf("%lf %lf %lf",&A, &B, &C);
+    
+    FORMULA = B*B - 4.0*A*C;
+    
+    if (FORMULA < 0 || A == 0){
+        printf("Impossivel calcular\n");
+   
+    }else{
+        printf("R1 = %.5lf\n", (-B + sqrt(FORMULA))/(2*A));
+        printf("R2 = %.5lf\n", (-B - sqrt(FORMULA))/(2*A));
+    }
+    
+   return 0;
+
+}
