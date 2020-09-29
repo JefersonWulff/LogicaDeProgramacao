@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(){
+
+    int NUM,i,teste;
+    
+        scanf("%d", &teste);
+     
+        for(i=1; i<=teste; i++){
+            scanf("%d", &NUM);
+            
+         if(NUM==0){
+            printf("NULL\n");
+        
+        }else if(NUM%2==0 && NUM>=0){
+            printf("EVEN POSITIVE\n");
+            
+        }else if(NUM%2!=0 && NUM>=0){
+            printf("ODD POSITIVE\n");
+        
+        }else if (NUM%2==0 && NUM<=0){ 
+            printf("EVEN NEGATIVE\n");
+            
+        }else if(NUM%2!=0 && NUM<=0){
+            printf("ODD NEGATIVE\n");
+            
+        }else if(NUM==0){
+            printf("NULL\n");
+        }
+        }
+
+    return 0;
+}
