@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+ int VALOR,NUM;
+    scanf("%d",&NUM);
+    if(NUM%2==0)
+        NUM=NUM+1;
+    else
+        NUM=NUM;
+    printf("%d\n",NUM);
+    
+    for(VALOR=1;VALOR<=5;VALOR++){
+    printf("%d\n",NUM+=2);
+}
+    return 0;
+}
