@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+    float A,B,C,VALOR,MEDIA;
+    int cont,NUM;
+    scanf("%d",&NUM);
+    for(cont=1; cont<=NUM; cont++){
+        scanf("%f %f %f",&A, &B, &C);
+    
+        VALOR = A*2.0 + B*3.0 + C*5.0;
+        MEDIA = VALOR/10;
+        printf("%.1f\n",MEDIA);
+    }
+    return 0;
+}
