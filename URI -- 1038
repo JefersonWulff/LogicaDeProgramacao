@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() {
+    int COD,QUANT;
+
+    scanf("%d %d",&COD, &QUANT);
+
+    if (COD == 1)
+    printf("Total: R$ %.2f\n", 4.00 * QUANT);
+
+    else if (COD == 2)
+    printf("Total: R$ %.2f\n", 4.50 * QUANT);
+
+    else if (COD == 3)
+    printf("Total: R$ %.2f\n", 5.00 * QUANT);
+
+    else if (COD == 4)
+    printf("Total: R$ %.2f\n", 2.00 * QUANT);
+
+    else if (COD == 5)
+    printf("Total: R$ %.2f\n", 1.50 * QUANT);
+
+    return 0;
+
+}
