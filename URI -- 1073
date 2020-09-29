@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+ int NUM, VALOR;
+ 
+     scanf("%d", &NUM);
+     
+     for ( VALOR = 1; VALOR <= NUM; VALOR++){
+      if(VALOR%2==0){
+       printf("%d^2 = %d\n", VALOR,(VALOR * VALOR));
+      }
+     }
+    return 0;
+}
