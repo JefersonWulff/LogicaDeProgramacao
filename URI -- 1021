@@ -1,0 +1,53 @@
+#include <stdio.h>
+int main(){
+    double N;
+    int CEMr,CINQUENTAr,VINTEr,DEZr,CINCOr,DOISr;
+    int UMr,CINQUENTAc,VINTECINCOc,DEZc,CINCOc,UMc;
+    int TROCO,CEN;
+    // entrada
+    scanf("%lf",&N);
+    
+    TROCO = N;
+    CEN = ((N - TROCO) * 100);
+    // parte dos reais
+    CEMr = TROCO / 100;
+    TROCO = TROCO - (CEMr * 100);
+    CINQUENTAr = TROCO / 50;
+    TROCO = TROCO - (CINQUENTAr * 50);
+    VINTEr = TROCO / 20;
+    TROCO = TROCO - (VINTEr * 20);
+    DEZr = TROCO / 10;
+    TROCO = TROCO -(DEZr * 10);
+    CINCOr = TROCO / 5;
+    TROCO = TROCO - (CINCOr * 5);
+    DOISr = TROCO / 2;
+    TROCO = TROCO - (DOISr * 2);
+    UMr = TROCO / 1;
+    //parte dos centavos
+    CINQUENTAc = CEN / 50;
+    CEN = CEN % 50;
+    VINTECINCOc = CEN / 25;
+    CEN = CEN % 25;
+    DEZc = CEN / 10;
+    CEN = CEN % 10;
+    CINCOc = CEN / 05;
+    CEN = CEN % 05;
+    UMc = CEN / 1;
+    //parte da saída
+    printf("NOTAS:\n");
+    printf("%d nota(s) de R$ 100.00\n",CEMr);
+    printf("%d nota(s) de R$ 50.00\n",CINQUENTAr);
+    printf("%d nota(s) de R$ 20.00\n",VINTEr);
+    printf("%d nota(s) de R$ 10.00\n",DEZr);
+    printf("%d nota(s) de R$ 5.00\n",CINCOr);
+    printf("%d nota(s) de R$ 2.00\n",DOISr);
+    printf("MOEDAS:\n");
+    printf("%d moeda(s) de R$ 1.00\n",UMr);
+    printf("%d moeda(s) de R$ 0.50\n",CINQUENTAc);
+    printf("%d moeda(s) de R$ 0.25\n",VINTECINCOc);
+    printf("%d moeda(s) de R$ 0.10\n",DEZc);
+    printf("%d moeda(s) de R$ 0.05\n",CINCOc);
+    printf("%d moeda(s) de R$ 0.01\n",UMc);
+return 0;
+
+}
