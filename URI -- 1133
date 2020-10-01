@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+    int X, Y, N;
+    
+    scanf("%d%d", &X, &Y);
+    
+    if (X > Y) {
+       for (N = Y+1; N < X;N++) {
+       if (N%5 == 2 || N%5 == 3) {
+         printf("%d\n", N);
+       }
+            }
+        }else if(X < Y){
+        for (N = X+1; N < Y; N++) {
+             if (N%5 == 2 || N%5 == 3) {
+                    printf("%d\n", N);
+                }
+           }
+    }
+    return 0;
+
+}
