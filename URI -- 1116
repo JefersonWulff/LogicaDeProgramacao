@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(){
+    float RESULTADO;
+    int A,B,i,VEZES;
+
+    
+    scanf("%d", &VEZES);
+    
+    for(i=0;i<VEZES;i++){
+        
+        scanf("%d %d", &A, &B);
+        
+        if(B==0){
+            printf("divisao impossivel\n");
+            
+        }else{
+            RESULTADO = (A*1.0)/(B);
+            printf("%.1lf\n", RESULTADO);
+        }
+    }
+    
+    return 0;
+}
