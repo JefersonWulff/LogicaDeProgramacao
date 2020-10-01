@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main (){
+	int X[10], i, N=0;
+	
+	for (i=0; i<10; i++){
+	    
+		scanf("%d", &X[i]);
+		
+		if (X[i]> 0){
+			printf("X[%d] = %d\n", N++, X[i]);
+		}else {
+			printf("X[%d] = 1\n", N++);
+		}
+	}
+	return 0;
+}
