@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+    int i,NUM,VEZES;
+    NUM=1;
+    scanf("%d", &VEZES);
+    
+    for(i=1;i<=VEZES;i++){
+       
+        printf("%d %d %d\n", NUM, NUM*NUM, NUM*NUM*NUM);
+        
+        NUM = NUM + 1;
+    }
+    return 0;
+}
