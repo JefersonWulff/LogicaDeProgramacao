@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(){
+ int CMC, FIM, CONT;
+CONT = 0;
+
+ scanf("%d %d", &CMC, &FIM);
+
+ do{
+  CONT++;
+  CMC++;
+  if (CMC == 24) CMC = 0;
+ }while(CMC != FIM);
+
+ printf("O JOGO DUROU %d HORA(S)\n", CONT);
+
+ return 0;
+}
