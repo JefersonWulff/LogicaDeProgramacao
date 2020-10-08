@@ -1,0 +1,80 @@
+#include <stdio.h>
+int main(){
+  int linha, coluna, A, B, SOLUCAO, NUM, INSTANCIA;
+  int MATRIZ[9][9], SOMAquadrante, SOMAlinha, SOMAcoluna;
+  A = 0;
+  B = 0;
+  SOLUCAO = 0;
+  INSTANCIA = 1;
+  
+  scanf("%d",&NUM);
+  // LOOP PARA INSERIR A MATRIZ 9X9
+  for(;INSTANCIA <= NUM;){                            
+    for(linha = 0; linha < 9; linha++){
+      for(coluna = 0; coluna < 9; coluna++){
+        scanf("%d",&MATRIZ[linha][coluna]);
+      }
+    }
+    // !9 = 362880
+    // VERIFICAÇÃO OS NÚMEROS NAS LINHA ATRAVÉS DE 9!
+    for(linha = 0; linha < 9; linha++){
+      if(MATRIZ[linha][0]*MATRIZ[linha][1]*MATRIZ[linha][2]*MATRIZ[linha][3]*MATRIZ[linha][4]*MATRIZ[linha][5]*MATRIZ[linha][6]*MATRIZ[linha][7]*MATRIZ[linha][8]!=362880){
+        SOLUCAO = 1;
+      }
+    }
+    // VERIFICAÇÃO DOS NÚMEROS NAS COLUNAS ATRAVÉS DE 9!
+    for(coluna = 0; coluna < 9; coluna++){
+      if(MATRIZ[0][coluna]*MATRIZ[1][coluna]*MATRIZ[2][coluna]*MATRIZ[3][coluna]*MATRIZ[4][coluna]*MATRIZ[5][coluna]*MATRIZ[6][coluna]*MATRIZ[7][coluna]*MATRIZ[8][coluna]!=362880){
+        SOLUCAO = 1;
+      }
+    }
+    /* O CASO DE !9 SE DA DEVIDO A MATRIZES SO COM O NÚMERO 5, QUE DAO 45 TAMBEM */
+
+    // VERIFICAÇÃO DAS LINHA E COLUNAS ATRAVES DA SOMA(1+2+3+4+5+6+7+8+9 = 45) 
+    for(linha = 0; linha < 9; linha++){
+      SOMAlinha = 0;
+      SOMAcoluna = 0;
+      for(coluna = 0; coluna < 9; coluna++){
+        SOMAlinha += MATRIZ[linha][coluna];
+        SOMAcoluna += MATRIZ[coluna][linha];
+      }
+      if(SOMAlinha != 45 || SOMAcoluna != 45){
+        linha = 9;
+        SOLUCAO = 1;
+      }
+    }
+    //VERIFICAÇÃO DOS QUADRANTES, MATRIZ 3X3 IGUAL A 45
+    for(;B <= 6;){
+      A = 0;
+      for(;A<= 6;){
+        SOMAquadrante=0;
+        for(linha = B; linha < 3+B; linha++){
+          for(coluna = A; coluna < 3+A; coluna++){
+            SOMAquadrante += MATRIZ[linha][coluna];
+          }
+        }
+        if(SOMAquadrante != 45){
+          SOLUCAO = 1;
+          B = 6;
+        }
+      A = A + 3;
+      }
+    B = B + 3;
+    }
+    // RESULTADO DA INSTANCIA, SE FOR = A 0(CORRETA), SE FOR = A 1(INCORRETA)
+    printf("%d", INSTANCIA);
+
+    if(SOLUCAO == 0){
+      printf("SIM\n\n");
+    }
+    else{
+      printf("NAO\n\n");
+    }
+    //NO CASO DE MAIS INSTANCIAS OS VALORES RETORNAM E A INTANCIA AUMENTA 1
+  INSTANCIA++;  
+  SOLUCAO = 0;
+  B = 0;
+  A = 0;
+  }
+return 0;
+}
