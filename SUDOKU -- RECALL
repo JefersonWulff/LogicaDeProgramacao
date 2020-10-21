@@ -1,0 +1,89 @@
+/* Esse código utiliza varredura em matriz em C para verificação das linhas, colunas e quadrantes do sudoku, assim como testa se as instâncias colocadas nele são corretas ou não
+
+verificado no problema URI -- 1383*/
+
+#include<stdio.h> 
+#include<stdlib.h> 
+#include<string.h> 
+
+int main(){ 
+
+  int INSTANCIA = 1, TESTES, linha, coluna, MATRIZ[9][9]; 
+  int SOLUCAO ,*vetor, BLOCO[10],varialvelA, variavelB, valor; 
+
+  scanf("%d",&TESTES); 
+
+  while(TESTES--){ 
+// LEITURA DOS TESTES 
+  for(linha = 0;linha < 9;linha++){ 
+    for(coluna = 0;coluna < 9;coluna++){ 
+      scanf("%d",&MATRIZ[linha][coluna]); 
+    }
+  }
+
+  printf("Instancia %d\n",INSTANCIA); 
+  SOLUCAO = 0; 
+
+// verifição dos números repetidos -- LINHAS
+  for(linha = 0;linha < 9;linha++){ 
+    vetor = (int*)calloc(10,sizeof(int)); 
+    for(coluna = 0;coluna < 9;coluna++){ 
+      if( vetor[MATRIZ[linha][coluna]] == 0 ){ 
+        vetor[MATRIZ[linha][coluna]] = MATRIZ[linha][coluna]; 
+      }else{ 
+        SOLUCAO = 1; 
+        linha = 9; 
+        coluna = 9; 
+      }
+    }
+  }
+
+// verifição dos números repetidos -- COLUNAS 
+  for(linha = 0;linha < 9;linha++){ 
+    vetor = (int*)calloc(10,sizeof(int)); 
+    for(coluna = 0;coluna < 9;coluna++){ 
+      if( vetor[MATRIZ[coluna][linha]] == 0 ){ 
+        vetor[MATRIZ[coluna][linha]] = MATRIZ[coluna][linha]; 
+      }else{ 
+        SOLUCAO = 1; 
+        linha = 9; 
+        coluna = 9; 
+      }
+    }
+  }
+
+// verificação dos números -- BLOCOS 3x3
+coluna = 3;
+for(linha = 0; linha < 6; linha+=3){
+  for(valor = 0; valor < 10; valor++){
+    BLOCO[valor] = 0;
+  }
+  for(varialvelA = linha; varialvelA < coluna; varialvelA++){
+    for(variavelB = linha; variavelB < coluna; variavelB++){
+      for(valor = 0; valor < 10; valor++){
+        if(MATRIZ[varialvelA][variavelB] == valor){
+          BLOCO[valor]++;
+        }
+      }
+    }
+  }
+  coluna += 3;
+  for(valor = 0; valor < 10; valor++){
+    if(BLOCO[valor] > 1){
+      SOLUCAO = 1;
+    }
+  }
+}
+
+// checagem das instâncias a partir de SOLUCAO
+  if(SOLUCAO == 1){ 
+    printf("NAO\n\n"); 
+  }else{ 
+    printf("SIM\n\n"); 
+  }
+   
+INSTANCIA++; 
+}
+
+return 0; 
+} 
